@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl">
+  <title data-ice="title">Connector Example</title>
+  <style>
+  .axis {
+    font: 10px sans-serif;
+  }
+
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
+  rect {
+    opacity: 0.8;
+  }
+  rect:hover{
+    opacity: 1;
+  }
+  </style>
+
+</head>
+  <body>
+    <p><strong> Example 1: SELECT count(*) AS n FROM tweets_nov_feb WHERE country='CO' </strong></p>
+    <p id="result-async"></p>
+
+    <hr>
+
+    <p><strong> Example 2: SELECT carrier_name as key0, AVG(airtime) AS val FROM flights_donotmodify WHERE airtime IS NOT NULL GROUP BY key0 ORDER BY val DESC LIMIT 20 </strong></p>
+    <div id="chart"></div>
+    <div id="vis"></div>
+    <script src="./assets/bundle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@3.14.0/build/vega-embed.js"></script>
+  </body>
+</html>
